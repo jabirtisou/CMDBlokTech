@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "camelcase": "^6.2.0",
+    "express": "^4.17.1"
+  },
+  "name": "cmdbloktech",
+  "description": "Repository voor Blok Tech #Attempt9999GitErrors",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jabirtisou/CMDBlokTech.git"
+  },
+  "author": "Jabir Tisoudali",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jabirtisou/CMDBlokTech/issues"
+  },
+  "homepage": "https://github.com/jabirtisou/CMDBlokTech#readme"
+}
