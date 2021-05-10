@@ -1,9 +1,40 @@
+
 const express = require('express')
 const app = express()
 const port = 3000
 
-app.set('view engine', 'ejs')
-app.use(express.static('public'));
+
+const users = [{
+  "firstName": "Anna",
+  "lastName": "Alexandria",
+  "age" : 22,
+  "description" : "Ik hou van sporten, en ik ontwerp kleren in mijn vrije tijd",
+  "tags" : ["student", "Bachelor", "HvA"]
+},
+{
+  "firstName": "Kim",
+  "lastName": "de Vries",
+  "age" : 19,
+  "description" : "Ik zoek een leuke vriend",
+  "tags" : ["student", "Bachelor", "HvA"]
+
+},
+{
+  "firstName": "Sophie",
+  "lastName": "Jansen",
+  "age" : 23,
+  "description" : "Ik hou van sporten, en ik ontwerp kleren in mijn vrije tijd",
+  "tags" : ["student", "Bachelor", "HvA"]
+}
+]
+
+
+
+
+
+app.use(express.static('public'))
+app.set('view engine', 'ejs');
+
 
 app.get('/', (req, res) => {
   res.render('login', {title:"Pick a user"});
@@ -27,4 +58,6 @@ app.use(function (req, res, next){
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
+
 
