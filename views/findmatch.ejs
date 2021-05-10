@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find your match</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -17,21 +19,23 @@
             <li>
                 <figure>
                     <a>
-                        <img src="images/user3.jpeg">
+                        <img class="profilepic" src="images/user3.jpeg">
                     </a>  
                     <figcaption>
-                        <h2>Naam Achternaam</h2>
-                        <p>Beschrijving</p>
-                        <form>
-                            <button>❤</button>
-                        </form>
-                        <button>x</button>
+                        <h2>Anna Alexandria</h2>
+                        <h3>22 Jaar</h3>
+                        <p>Ik hou van sporten, en ik ontwerp kleren in mijn vrije tijd</p>
+                        
                     </figcaption>
                 </figure>
             </li>
         </ul>
     </main>
-
+    <form>
+        <button class="button"><img class="buttonimg" src="images/closeMatch.svg"></button>
+        <button class="button"><img class="buttonimg" src="images/heartMatch.svg"></button>
+    </form>
+    
 
 
     <%- include('layouts/nav'); -%>

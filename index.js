@@ -9,22 +9,18 @@ const users = [{
   "lastName": "Alexandria",
   "age" : 22,
   "description" : "Ik hou van sporten, en ik ontwerp kleren in mijn vrije tijd",
-  "tags" : ["student", "Bachelor", "HvA"]
 },
 {
   "firstName": "Kim",
   "lastName": "de Vries",
   "age" : 19,
   "description" : "Ik zoek een leuke vriend",
-  "tags" : ["student", "Bachelor", "HvA"]
-
 },
 {
   "firstName": "Sophie",
   "lastName": "Jansen",
   "age" : 23,
   "description" : "Ik hou van sporten, en ik ontwerp kleren in mijn vrije tijd",
-  "tags" : ["student", "Bachelor", "HvA"]
 }
 ]
 
