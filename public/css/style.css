@@ -12,7 +12,7 @@ body {
     background-color: #f7f7fa;
 
 }
-
+/* Navigatie bar */
 .nav {
     position: fixed;
     bottom: 0;
@@ -43,72 +43,22 @@ body {
     text-decoration: none;
 }
 
+
+/* Header */
+
 h1 {
     font-size: 23px;
     margin: 10px 40px 10px 25px;
 }
-h3{
-    font-size: 18px;
-}
-p{
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-figure {
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-}
 
-ul{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    position: fixed;
-    
-}
+/* Gebruikersprofiel */
 
-
-.profilepic {
-    position: relative;
-    width: 80%;
-    border-radius: 10px;
-
-}
-
-
-button {
-    background-color: transparent;
-    border: none;
-    display: flex;
-
-}
-
-.buttonimg {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    margin-top: 10px;
-    
-}
-
-form{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-}
-.button{
-
-}
-
-main {
-    padding: 25px;
+.match {
+    padding: 40px;
     border-radius: 15px;
-    width:100%;
+    width:90%;
     height: calc(100vh - 200px); /* viewport height - nav height */
-    max-width: 1150px;
+    max-width: 400px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
@@ -124,6 +74,56 @@ main {
     
 }
 
-figure {
+.userfigure {
+    margin: 0;
     margin-top: -10px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    
+}
+h3{
+    font-size: 18px;
+}
+p{
+    font-size: 12px;
+    margin: 8px 0px;
+    
+}
+
+.profilepic {
+    width: 70%;
+    border-radius: 10px;
+    max-width: 330px;
+
+
+}
+
+
+form{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+
+/* Like en close button */
+button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+
+}
+
+.buttonimg {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    margin-top: 10px;
+    
 }
