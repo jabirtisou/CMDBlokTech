@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="98px" height="98px" viewBox="0 0 98 98" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <defs>
+        <circle id="path-1" cx="45" cy="45" r="45"></circle>
+        <filter x="-7.8%" y="-5.6%" width="115.6%" height="115.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0901960784   0 0 0 0 0.203921569   0 0 0 0 0.368627451  0 0 0 1 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter3"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter3" result="shadowBlurOuter3"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0901960784   0 0 0 0 0.203921569   0 0 0 0 0.368627451  0 0 0 1 0" type="matrix" in="shadowBlurOuter3" result="shadowMatrixOuter3"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter3"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2" transform="translate(4.000000, 2.000000)">
+            <g id="Oval">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#17345E" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="sports_soccer_white_48dp" transform="translate(5.000000, 4.000000)">
+                <rect id="Rectangle" x="0" y="0" width="81" height="81"></rect>
+                <path d="M40.5,12 C24.7435714,12 12,24.7435714 12,40.5 C12,56.2564286 24.7435714,69 40.5,69 C56.2564286,69 69,56.2564286 69,40.5 C69,24.7435714 56.2564286,12 40.5,12 Z M42.5357143,21.975 L48.8464286,17.5778571 C53.4878571,19.2471429 57.4371429,22.3007143 60.2871429,26.2092857 L58.3328571,33.0085714 L55.5642857,33.945 L42.5357143,24.825 L42.5357143,21.975 Z M52.755,36.9578571 L48.1135714,50.6785714 L32.8457143,50.6785714 L28.245,36.9578571 L40.5,28.3671429 L52.755,36.9578571 Z M32.1535714,17.5778571 L38.4642857,21.975 L38.4642857,24.825 L25.4764286,33.945 L22.7078571,32.9678571 L20.7535714,26.2092857 C23.5628571,22.3007143 27.5528571,19.2471429 32.1535714,17.5778571 Z M27.4714286,54.9535714 L21.2828571,55.4828571 C18.0664286,51.4114286 16.1528571,46.2814286 16.1121429,40.7035714 L21.405,36.8357143 L24.2142857,37.8128571 L29.0592857,52.185 L27.4714286,54.9535714 Z M46.7292857,64.1142857 C44.7342857,64.6435714 42.6578571,64.9285714 40.5,64.9285714 C38.3421429,64.9285714 36.2657143,64.6028571 34.2707143,64.1142857 L30.9728571,57.03 L32.2757143,54.7907143 L48.7242857,54.7907143 L50.0271429,57.03 L46.7292857,64.1142857 Z M59.7171429,55.5235714 L53.5285714,54.9942857 L51.9,52.2257143 L56.7857143,37.8128571 L59.595,36.8357143 L64.8878571,40.7035714 C64.8471429,46.2814286 62.9335714,51.4114286 59.7171429,55.5235714 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
