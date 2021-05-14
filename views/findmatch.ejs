@@ -13,23 +13,24 @@
 
     <main class="match">
         <ul>
-            
+            <% for (let i = 0; i < users.length; i++) { %>
             <li>
                 <figure class="userfigure">
                     <a>
                         <img class="profilepic" src="images/user3.jpeg">
                     </a>  
                     <figcaption>
-                        <h2>Anna Alexandria</h2>
-                        <h3>22 Jaar</h3>
-                        <p>Ik hou van sporten, en ik ontwerp kleren in mijn vrije tijd</p>
+                        <h2><%= users[i].firstName + ' ' + users[i].lastName %></h2>
+                        <h3><%= users[i].age %></h3>
+                        <p><%= users[i].description %></p>
                         
                     </figcaption>
                 </figure>
             </li>
+            <% } %>
         </ul>
     </main>
-    <form>
+    <form action="" method="POST">
         <button class="button"><img class="buttonimg" src="images/closebtn.svg"></button>
         <button class="button"><img class="buttonimg" src="images/soccerbtn.svg"></button>
     </form>

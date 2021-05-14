@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
 }
 
 body {
@@ -10,7 +9,6 @@ body {
     height: 100vh;
     font-family: 'Roboto', sans-serif;
     background-color: #f7f7fa;
-
 }
 
 /* Header */
@@ -42,16 +40,12 @@ header{
     display: flex;
     
 }
-
 .nav_active2{
     background-color: #34528D;
 }
-
-
 .icon {
     width: 3em;
 }
-
 .nav_link {
     display: flex;
     flex-direction: column;
@@ -67,8 +61,6 @@ header{
 }
 /* Header */
 
-
-
 .containerpic {
     display: flex;
     align-items: center;
@@ -79,7 +71,6 @@ header{
     border-radius: 50%;
     height: 100px;
     width: 100px;
-    
 }
 
 figcaption {
