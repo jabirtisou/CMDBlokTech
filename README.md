@@ -82,14 +82,14 @@ npm start
 
 
 <!-- LICENSE -->
-## License
+## 🔗 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
 <!-- CONTACT -->
-## Contact
+## 📢 Contact
 
 Your Name - Jabir Tisoudali - jabirtisou@hotmail.com
 
@@ -98,7 +98,7 @@ Project Link: [https://github.com/jabirtisou/CMDBlokTech](https://github.com/jab
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+## 📚 Acknowledgements
 
 
 
