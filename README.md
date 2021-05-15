@@ -1,5 +1,4 @@
-# CMDBlokTech
-Repository voor Blok Tech #Attempt9999GitErrors
+# 🎒 Blok Tech: ⚽️ FootballMatch ❤️ Like Feature
 
 
 
@@ -16,13 +15,13 @@ Repository voor Blok Tech #Attempt9999GitErrors
 <br />
 <p align="center">
   <a href="https://github.com/jabirtisou/CMDBlokTech">
-    <!--img src="images/logo.png" alt="Logo" width="80" height="80"-->
+    <img src="wiki_images/Banner.png" alt="Logo" -->
   </a>
 
-  <h3 align="center">Blok Tech CMD</h3>
+  <h3 align="center">🎒 Blok Tech - ⚽️ FootballMatch</h3>
 
   <p align="center">
-    Project Tech, Back-end, Front-end 2
+    🏭 Project Tech, 🏗️ Back-end, 🖌️ Front-end 2
     <br />
     <a href="https://github.com/jabirtisou/CMDBlokTech"><strong>Explore the docs »</strong></a>
     <br />
@@ -37,73 +36,48 @@ Repository voor Blok Tech #Attempt9999GitErrors
 
 
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
+
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## 💭 About The Project
 
-
+⚽️ FootballMatch is een ❤️ matching applicatie die gebruikers laat matchen op basis van hun favoriete voetbalteam. Kom jij iemand tegen met een favoriete voetbalteam die jou aanspreekt? Wie weet heb jij een match en kan je samen met elkaar een potje voetballen 🥅!
 
 
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [NodeJS](https://nodejs.dev/npm-global-or-local-packages)
+* [Express](https://expressjs.com)
+* [EJS](https://ejs.co/)
+* [MongoDB](https://www.mongodb.com/products/compass)
+
 
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## 🛠 Getting Started
+
+Om deze coole project te installeren. Volg deze instructies:
 
 
+### 📡 Installation
 
-
-### Installation
-
-
-
-
-
-## Usage
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
+Clone deze repository door middel van je terminal:
+```
+git clone https://github.com/jabirtisou/cmdbloktech.git
+```
+Vervolgens installeer je de packages met NPM:
+```
+npm install
+```
+En start je de server:
+```
+npm start
+```
+## 🎮 Usage
 
 
 
