@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -12,14 +13,16 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 
 const store = new MongoDBStore({
-  uri: "mongodb+srv://jabirtisou:ikwilinloggen@cluster0.kotgm.mongodb.net/footballmatch",
+  uri: 'mongodb+srv://jabirtisou:ikwilinloggen@cluster0.kotgm.mongodb.net/footballmatch',
   collection: "sessions"
 });
 mongoose
-  .connect("mongodb+srv://jabirtisou:ikwilinloggen@cluster0.kotgm.mongodb.net/footballmatch", { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect("mongodb+srv://jabirtisou:ikwilinloggen@cluster0.kotgm.mongodb.net/footballmatch", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
   .then(() => console.log("MongoDB Connected..."))
   .catch(err => console.log(err));
- 
 
 //Middlewares
 app.use(express.static('public'))
@@ -35,7 +38,9 @@ app.use(
 );
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.session.isLoggedIn;
   next();
@@ -71,25 +76,39 @@ app.get('/myprofile', isAuth, profile);
 //Routes functions
 function home(req, res) {
   User.find().then(users => {
-    res.render('login', { title: "Pick a user", users });
+    res.render('login', {
+      title: "Pick a user",
+      users
+    });
   }).catch(err => console.log(err.message));
 }
 
 function login(req, res, next) {
-  const { user } = req.body;
+  const {
+    user
+  } = req.body;
   req.session.isLoggedIn = true;
   req.session.user = user;
   res.redirect("/findmatch")
 }
 
 function addUser(req, res, next) {
-  const { firstName, lastName, age, description } = req.body;
+  const {
+    firstName,
+    lastName,
+    age,
+    description
+  } = req.body;
   const user = new User({
-    firstName, lastName, age, description
+    firstName,
+    lastName,
+    age,
+    description
   });
   user.save().then(user => {
     res.status(200).json(user);
-  }).catch(err => console.log(err.message));
+    // eslint-disable-next-line no-console
+  }).catch((err) => console.log(err.message));
 }
 
 function findMatch(req, res, next) {
@@ -98,14 +117,23 @@ function findMatch(req, res, next) {
   User.findById(userID).then((loggedInUser) => {
     const userLikes = [...loggedInUser.likes, ...loggedInUser.dislikes, userID];
     console.log("userLikes", userLikes)
-    User.find({ _id: { $nin: userLikes } }).then((users) => {
-      res.render('findmatch', { title: "find it", users });
+    User.find({
+      _id: {
+        $nin: userLikes
+      }
+    }).then((users) => {
+      res.render('findmatch', {
+        title: "find it",
+        users
+      });
     }).catch(err => err.message);
   }).catch(err => console.log(err.message));
 }
 
 function likeUser(req, res) {
-  const { likingID } = req.body;
+  const {
+    likingID
+  } = req.body;
   const lUser = req.session.user;
   User.findById(lUser).then((likingUser) => {
     likingUser.likes.push(likingID);
@@ -117,16 +145,23 @@ function likeUser(req, res) {
           console.log("Liked User Updated!");
           if (newLikedUser.likes.includes(lUser)) {
             console.log("Match found!")
-            User.findByIdAndUpdate({ _id: userId },
-              { $pullAll: { pending: [userId] } }, { useFindAndModify: false }).then((updatedLikedUser) => {
-                newLikingUser.matches.push(userId);
-                newLikingUser.matches.push(lUser);
-                newLikingUser.save().then((savedNewLikingUser) => {
-                  updatedLikedUser.save().then((newUpdatedLikedUser) => {
-                    console.log("Update Made!")
-                  });
-                }).catch(err => console.log(err));
+            User.findByIdAndUpdate({
+              _id: userId
+            }, {
+              $pullAll: {
+                pending: [userId]
+              }
+            }, {
+              useFindAndModify: false
+            }).then((updatedLikedUser) => {
+              newLikingUser.matches.push(userId);
+              newLikingUser.matches.push(lUser);
+              newLikingUser.save().then((savedNewLikingUser) => {
+                updatedLikedUser.save().then((newUpdatedLikedUser) => {
+                  console.log("Update Made!")
+                });
               }).catch(err => console.log(err));
+            }).catch(err => console.log(err));
           } else {
             console.log("pending...")
             newLikingUser.pending.push(userId);
@@ -145,8 +180,20 @@ function likeUser(req, res) {
 function resetUser(req, res) {
   const userId = req.params.userId;
   const loggedInUserId = req.session.user;
-  User.updateOne({ _id: loggedInUserId }, { $pullAll: { likes: [userId] } }).then(() => {
-    User.updateOne({ _id: loggedInUserId }, { $pullAll: { pending: [userId] } }).then(() => {
+  User.updateOne({
+    _id: loggedInUserId
+  }, {
+    $pullAll: {
+      likes: [userId]
+    }
+  }).then(() => {
+    User.updateOne({
+      _id: loggedInUserId
+    }, {
+      $pullAll: {
+        pending: [userId]
+      }
+    }).then(() => {
       console.log("successfully reset");
       res.redirect("/findmatch");
     }).catch(err => console.log(err));
@@ -156,7 +203,9 @@ function resetUser(req, res) {
 }
 
 function dislikeUser(req, res) {
-  const { dislikingID } = req.body;
+  const {
+    dislikingID
+  } = req.body;
   let dislikes = [];
   dislikes.push(dislikingID);
   const dUser = req.session.user;
@@ -182,9 +231,17 @@ function likeList(req, res) {
     const userMatches = [...user.matches];
     const usersPending = [...user.pending]
     console.log("userMatches", userMatches);
-    User.find({ _id: userMatches }).then((matchedUsers) => {
-      User.find({ _id: usersPending }).then((pendingUsers) => {
-        res.render('likelist', { title: "My Like list", matchedUsers, pendingUsers });
+    User.find({
+      _id: userMatches
+    }).then((matchedUsers) => {
+      User.find({
+        _id: usersPending
+      }).then((pendingUsers) => {
+        res.render('likelist', {
+          title: "My Like list",
+          matchedUsers,
+          pendingUsers
+        });
       }).catch(err => console.log(err));
     }).catch(err => err.message);
   }).catch(err => console.log(err));
@@ -193,17 +250,17 @@ function likeList(req, res) {
 function profile(req, res) {
   const userID = req.session.user;
   User.findById(userID).then((user) => {
-    res.render('myprofile', { title: "My profile", user });
-  }).catch(err => console.log(err));
+    res.render('myprofile', {
+      title: 'My profile',
+      user,
+    });
+  }).catch((err) => console.log(err));
 }
 
-app.use(function (req, res, next) {
+app.use(function (_req, res, next) {
   res.status(404).send("Sorry can't find that.")
 })
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`)
 })
-
-
-

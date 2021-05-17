@@ -8,15 +8,16 @@
     <title>Find your match</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
     <%- include('layouts/header'); -%>
-
+    <% for (let user of users) { %>
         <main class="match">
             <ul>
-                <% if (users.length> 0) { %>
-                    <% for (let user of users) { %>
+    
+                    
                         <li>
                             <figure class="userfigure">
                                 <a>
@@ -36,22 +37,23 @@
                             </figure>
                         </li>
                         
-                            <form action="/dislike/<%= user._id %>" method="POST">
-                                <input type="hidden" value="<%= user._id %>" name="dislikingID">
-                                <button class="button" type="submit"><img class="buttonimg"
-                                        src="images/closebtn.svg"></button>
-                            </form>
-                            <form action="/like/<%= user._id %>" method="POST">
-                                <input type="hidden" value="<%= user._id %>" name="likingID">
-                                <button class="button" type="submit"><img class="buttonimg"
-                                        src="images/soccerbtn.svg"></button>
-                            </form>
                         
-                        <% } %>
-                            <% } %>
+                    
             </ul>
         </main>
+        <div class="buttons">
+            <form action="/dislike/<%= user._id %>" method="POST">
+                <button class="button" value="<%= user._id %>" name="dislikingID" type="submit"><img class="buttonimg"
+                        src="images/closebtn.svg"></button>
+            </form>
+            <form action="/like/<%= user._id %>" method="POST">
+                <button class="button" value="<%= user._id %>" name="likingID" type="submit"><img class="buttonimg"
+                        src="images/soccerbtn.svg"></button>
+            </form>
+        </div>
+        <% } %>
         <%- include('layouts/nav'); -%>
+        <script src="/scripts/findmatch.js"></script>
 </body>
 
 </html>
