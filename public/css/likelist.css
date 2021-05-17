@@ -87,11 +87,23 @@ figcaption{
     margin-left: 3.3em;
 }
 
-li{
-
-
-}
 
 main {
     margin-top: 5em;
+}
+
+form {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -0.6rem;
+
+}
+
+button {
+    border: none;
+    background: transparent;
+}
+.buttonimg{
+    width: 30px;
+    height: 30px;
 }

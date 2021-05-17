@@ -23,7 +23,7 @@
                         <% if (matchedUsers.length> 0) { %>
                             <% for (let matchedUser of matchedUsers) { %>
                                 <figure>
-                                    <img class="roundpic" src="images/user1.jpg">
+                                    <img src="/images/<%=matchedUser.image%>" class="roundpic">
                                     <figcaption>
                                         <h4>
                                             <%= matchedUser.firstName %>
@@ -50,15 +50,15 @@
                         <% if (pendingUsers.length> 0) { %>
                             <% for (let pendingUser of pendingUsers) { %>
                                 <figure>
-                                    <img class="roundpic" src="images/user2.jpg">
+                                    <img src="/images/<%=pendingUser.image%>" class="roundpic">
                                     <figcaption>
                                         <h4>
                                             <%= pendingUser.firstName %>
                                                 <%= pendingUser.lastName %>
                                         </h4>
                                         <form action="/reset/<%= pendingUser._id %>" method="POST">
-                                            <input type="hidden" value="<%= pendingUser._id %>" name="resetID">
-                                            <button type="submit">reset</button>
+                                            <button type="submit value="<%= pendingUser._id %>" name="resetID""><img class="buttonimg"
+                                                src="images/closebtn.svg"></button>
                                         </form>
                                     </figcaption>
                                 </figure>
