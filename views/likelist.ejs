@@ -1,48 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find your match</title>
-    <link rel="stylesheet" href="/css/likelist.css"></link>
+    <link rel="stylesheet" href="/css/likelist.css">
+    </link>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <%- include('layouts/header'); -%>
-    
-    <main>
-        <section>
+
+        <main>
+            <section>
                 <h2>Matches</h2>
-            <ul>
+                <ul>
                     <li>
-                        <figure>
-                            <img class="roundpic" src="images/user1.jpg" >
-                            <figcaption>
-                                <h4>Jack Oustin</h4>
-                                <p>Hey, how are you</p>
-                            </figcaption>
-                        </figure>
+                        <% if (matchedUsers.length> 0) { %>
+                            <% for (let matchedUser of matchedUsers) { %>
+                                <figure>
+                                    <img class="roundpic" src="images/user1.jpg">
+                                    <figcaption>
+                                        <h4>
+                                            <%= matchedUser.firstName %>
+                                                <%= matchedUser.lastName %>
+                                        </h4>
+                                        <p>Hey, how are you</p>
+                                    </figcaption>
+                                </figure>
+                                <% } %>
+                                    <% } else {%>
+                                        <figure>
+                                            <h4>No Matches Yet....</h4>
+                                        </figure>
+
+                                        <% } %>
                     </li>
                 </ul>
             </section>
-            
+
             <section>
-                    <h2>Pending</h2>
+                <h2>Pending</h2>
                 <ul>
-                        <li>
-                            <figure>
-                                <img class="roundpic" src="images/user2.jpg" >
-                                <figcaption>
-                                    <h4>Hendrik Jansen</h4>
-                                </figcaption>
-                            </figure>
-                        </li>
+                    <li>
+                        <% if (pendingUsers.length> 0) { %>
+                            <% for (let pendingUser of pendingUsers) { %>
+                                <figure>
+                                    <img class="roundpic" src="images/user2.jpg">
+                                    <figcaption>
+                                        <h4>
+                                            <%= pendingUser.firstName %>
+                                                <%= pendingUser.lastName %>
+                                        </h4>
+                                        <form action="/reset/<%= pendingUser._id %>" method="POST">
+                                            <input type="hidden" value="<%= pendingUser._id %>" name="resetID">
+                                            <button type="submit">reset</button>
+                                        </form>
+                                    </figcaption>
+                                </figure>
+                                <% } %>
+                                    <% } else {%>
+                                        <figure>
+                                            <h4>No Pending Yet....</h4>
+
+                                        </figure>
+                                        <% } %>
+                    </li>
                 </ul>
             </section>
-    </main>
+        </main>
 
-    <%- include('layouts/nav'); -%>
+        <%- include('layouts/nav'); -%>
 </body>
+
 </html>

@@ -1,0 +1,97 @@
+[{
+  "_id": {
+      "$oid": "609eec18520836250c689233"
+  },
+  "firstName": "Anna",
+  "lastName": "Alexandria",
+  "age": 22,
+  "description": "Ik hou van sporten, en ik ontwerp kleren in mijn vrije tijd",
+  "__v": 92,
+  "dislikes": [],
+  "likes": [],
+  "dislikedBy": [],
+  "likedBy": [],
+  "matches": [],
+  "pending": []
+},
+{
+  "_id": {
+      "$oid": "609eecb4c310c12555f87f8c"
+  },
+  "firstName": "Kim",
+  "lastName": "de Vries",
+  "age": 19,
+  "description": "Ik zoek een leuke vriend",
+  "__v": 53,
+  "dislikedBy": [],
+  "dislikes": [],
+  "likedBy": [],
+  "likes": [],
+  "matches": [],
+  "pending": []
+},
+{
+  "_id": {
+      "$oid": "609eecc6c310c12555f87f8d"
+  },
+  "firstName": "Sophie",
+  "lastName": "Jansen",
+  "age": 23,
+  "description": "Ik hou van sporten, en ik ontwerp kleren in mijn vrije tijd",
+  "__v": 16,
+  "dislikedBy": [],
+  "dislikes": [],
+  "likedBy": [],
+  "likes": [],
+  "matches": [],
+  "pending": []
+},
+{
+  "_id": {
+      "$oid": "609eecd5c310c12555f87f8e"
+  },
+  "firstName": "Emerson",
+  "lastName": "Mcsweeney",
+  "age": 30,
+  "description": "Ik hou van sporten, en ik ontwerp kleren in mijn vrije tijd",
+  "__v": 10,
+  "dislikedBy": [],
+  "dislikes": [],
+  "likedBy": [],
+  "likes": [],
+  "matches": [],
+  "pending": []
+},
+{
+  "_id": {
+      "$oid": "609eece2c310c12555f87f8f"
+  },
+  "firstName": "Ruth",
+  "lastName": "Williams",
+  "age": 28,
+  "description": "Ik hou van sporten, en ik ontwerp kleren in mijn vrije tijd",
+  "__v": 45,
+  "dislikedBy": [],
+  "dislikes": [],
+  "likedBy": [],
+  "likes": [],
+  "matches": [],
+  "pending": []
+},
+{
+  "_id": {
+      "$oid": "609eecf0c310c12555f87f90"
+  },
+  "firstName": "Billy",
+  "lastName": "Hancock",
+  "age": 26,
+  "description": "Ik hou van sporten, en ik ontwerp kleren in mijn vrije tijd",
+  "__v": 13,
+  "dislikedBy": [],
+  "dislikes": [],
+  "likedBy": [],
+  "likes": [],
+  "matches": [],
+  "pending": []
+}
+]
