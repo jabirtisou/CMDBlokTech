@@ -43,7 +43,8 @@
 <!-- ABOUT THE PROJECT -->
 ## 💭 About The Project
 
-⚽️ FootballMatch is een ❤️ matching applicatie die gebruikers laat matchen op basis van hun favoriete voetbalteam. Kom jij iemand tegen met een favoriete voetbalteam die jou aanspreekt? Wie weet heb jij een match en kan je samen met elkaar een potje voetballen 🥅!
+⚽️ FootballMatch is een ❤️ matching applicatie die gebruikers laat matchen om samen met elkaar een potje te gaan voetballen. 
+Kom jij iemand tegen die jou aanspreekt? Klik op de football en wie weet krijg jij het terug voor een match 🥅!
 
 
 
@@ -78,8 +79,13 @@ En start je de server:
 npm start
 ```
 ## 🎮 Usage
+Bij het openen van Footballmatch log je in met jouw account. Na het inloggen kom je op de find match pagina. Hier kan jij je eventuele match vinden. Door het klikken op de voetballike komt de gebruiker bij je pending te staan.. Krijg jij een voetballike terug dan hebben jullie samen een match!
 
+<img src="wiki_images/Screen1.png" alt="Logo" width="33%" /><img src="wiki_images/Screen2.png" alt="Logo" width="33%" /><img src="wiki_images/Screen3.png" alt="Logo" width="33%" />
 
+## 📂 Database 
+
+<img src="wiki_images/Database.png" alt="Logo" />
 
 <!-- LICENSE -->
 ## 🔗 License
