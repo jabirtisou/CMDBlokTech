@@ -86,14 +86,14 @@ function home(req, res) {
     })
     .catch((err) => console.log(err.message));
 }
-
+// login
 function login(req, res, next) {
   const { user } = req.body;
   req.session.isLoggedIn = true;
   req.session.user = user;
   res.redirect('/findmatch');
 }
-
+// Wie is gebruiker functie
 function addUser(req, res, next) {
   const { firstName, lastName, age, description } = req.body;
   const user = new User({
@@ -110,7 +110,7 @@ function addUser(req, res, next) {
     })
     .catch((err) => console.log(err.message));
 }
-
+// Findmatch users
 function findMatch(req, res, next) {
   console.log('Logged in user:', req.session.user);
   const userID = req.session.user;
@@ -138,6 +138,7 @@ function findMatch(req, res, next) {
     .catch((err) => console.log(err.message));
 }
 
+// Like functie
 function likeUser(req, res) {
   const { likingID } = req.body;
   const lUser = req.session.user;
@@ -207,6 +208,7 @@ function likeUser(req, res) {
     .catch((err) => console.log(err));
 }
 
+// Like verwijderen
 function resetUser(req, res) {
   const userId = req.params.userId;
   const loggedInUserId = req.session.user;
@@ -242,6 +244,7 @@ function resetUser(req, res) {
     });
 }
 
+// dislike functie
 function dislikeUser(req, res) {
   const { dislikingID } = req.body;
   let dislikes = [];
@@ -273,6 +276,7 @@ function dislikeUser(req, res) {
     .catch((err) => console.log(err));
 }
 
+// Match en pending lijst
 function likeList(req, res) {
   const userID = req.session.user;
   User.findById(userID)
@@ -301,6 +305,7 @@ function likeList(req, res) {
     .catch((err) => console.log(err));
 }
 
+// My Profile
 function profile(req, res) {
   const userID = req.session.user;
   User.findById(userID)
