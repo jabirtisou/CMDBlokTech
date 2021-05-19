@@ -26,7 +26,7 @@ mongoose
   .then(() => console.log('MongoDB Connected...'))
   .catch((err) => console.log(err));
 
-//Middlewares
+// Middlewares
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(cors());
