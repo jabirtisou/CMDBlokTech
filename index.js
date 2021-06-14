@@ -235,7 +235,7 @@ function resetUser(req, res) {
       )
         .then(() => {
           console.log("successfully reset");
-          res.redirect("/findmatch");
+          res.redirect("/likelist");
         })
         .catch((err) => console.log(err));
     })
