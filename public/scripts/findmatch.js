@@ -20,5 +20,3 @@ function soundSignal() {
   audio.play();
 }
 likeButton.addEventListener("click", soundSignal);
-
-setTimeout(soundSignal, 10000);
