@@ -145,15 +145,13 @@ function likeUser(req, res) {
   User.findById(lUser)
     .then((likingUser) => {
       likingUser.likes.push(likingID);
-      likingUser;
-      setTimeout(3000);
+      likingUser
         .save()
         .then((newLikingUser) => {
           const userId = req.params.userId;
           User.findById(userId)
             .then((likedUser) => {
               likedUser.likedBy.push(lUser);
-              setTimeout(3000);
               likedUser
                 .save()
                 .then((newLikedUser) => {
@@ -175,9 +173,7 @@ function likeUser(req, res) {
                     )
                       .then((updatedLikedUser) => {
                         newLikingUser.matches.push(userId);
-                        setTimeout(3000);
                         newLikingUser.matches.push(lUser);
-                        setTimeout(3000);
                         newLikingUser
                           .save()
                           .then((savedNewLikingUser) => {
@@ -193,7 +189,6 @@ function likeUser(req, res) {
                   } else {
                     console.log("pending...");
                     newLikingUser.pending.push(userId);
-                    setTimeout(3000);
                     newLikingUser
                       .save()
                       .then(() => {
@@ -206,7 +201,6 @@ function likeUser(req, res) {
                 .catch((err) => console.log(err));
             })
             .catch((err) => console.log(err));
-            setTimeout(3000);
           console.log("Liking User Updated!");
         })
         .catch((err) => console.log(err));
@@ -241,7 +235,7 @@ function resetUser(req, res) {
       )
         .then(() => {
           console.log("successfully reset");
-          res.redirect("/likelist");
+          res.redirect("/findmatch");
         })
         .catch((err) => console.log(err));
     })
