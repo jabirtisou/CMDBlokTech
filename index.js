@@ -1,38 +1,38 @@
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const session = require('express-session');
-const MongoDBStore = require('connect-mongodb-session')(session);
-const dotenv = require('dotenv');
-const User = require('./public/scripts/models/User');
-const isAuth = require('./public/scripts/middlewares/is-auth');
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const session = require("express-session");
+const MongoDBStore = require("connect-mongodb-session")(session);
+const dotenv = require("dotenv");
+const User = require("./public/scripts/models/User");
+const isAuth = require("./public/scripts/middlewares/is-auth");
 const app = express();
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 
 const store = new MongoDBStore({
-  uri: 'mongodb+srv://jabirtisou:ikwilinloggen@cluster0.kotgm.mongodb.net/footballmatch',
-  collection: 'sessions',
+  uri: "mongodb+srv://jabirtisou:ikwilinloggen@cluster0.kotgm.mongodb.net/footballmatch",
+  collection: "sessions",
 });
 mongoose
   .connect(
-    'mongodb+srv://jabirtisou:ikwilinloggen@cluster0.kotgm.mongodb.net/footballmatch',
+    "mongodb+srv://jabirtisou:ikwilinloggen@cluster0.kotgm.mongodb.net/footballmatch",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }
   )
-  .then(() => console.log('MongoDB Connected...'))
+  .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.log(err));
 
 // Middlewares
-app.use(express.static('public'));
-app.set('view engine', 'ejs');
+app.use(express.static("public"));
+app.set("view engine", "ejs");
 app.use(cors());
 app.use(
   session({
-    secret: 'my secret',
+    secret: "my secret",
     resave: false,
     saveUninitialized: false,
     store: store,
@@ -66,21 +66,21 @@ app.use((req, res, next) => {
 });
 
 //Routes
-app.get('/', home);
-app.post('/login', login);
-app.post('/user', addUser);
-app.get('/findmatch', isAuth, findMatch);
-app.post('/like/:userId', isAuth, likeUser);
-app.post('/reset/:userId', isAuth, resetUser);
-app.post('/dislike/:userId', isAuth, dislikeUser);
-app.get('/likelist', isAuth, likeList);
-app.get('/myprofile', isAuth, profile);
+app.get("/", home);
+app.post("/login", login);
+app.post("/user", addUser);
+app.get("/findmatch", isAuth, findMatch);
+app.post("/like/:userId", isAuth, likeUser);
+app.post("/reset/:userId", isAuth, resetUser);
+app.post("/dislike/:userId", isAuth, dislikeUser);
+app.get("/likelist", isAuth, likeList);
+app.get("/myprofile", isAuth, profile);
 //Routes functions
 function home(req, res) {
   User.find()
     .then((users) => {
-      res.render('login', {
-        title: 'Pick a user',
+      res.render("login", {
+        title: "Pick a user",
         users,
       });
     })
@@ -91,7 +91,7 @@ function login(req, res, next) {
   const { user } = req.body;
   req.session.isLoggedIn = true;
   req.session.user = user;
-  res.redirect('/findmatch');
+  res.redirect("/findmatch");
 }
 // Wie is gebruiker functie
 function addUser(req, res, next) {
@@ -112,7 +112,7 @@ function addUser(req, res, next) {
 }
 // Findmatch users
 function findMatch(req, res, next) {
-  console.log('Logged in user:', req.session.user);
+  console.log("Logged in user:", req.session.user);
   const userID = req.session.user;
   User.findById(userID)
     .then((loggedInUser) => {
@@ -121,15 +121,15 @@ function findMatch(req, res, next) {
         ...loggedInUser.dislikes,
         userID,
       ];
-      console.log('userLikes', userLikes);
+      console.log("userLikes", userLikes);
       User.find({
         _id: {
           $nin: userLikes,
         },
       })
         .then((users) => {
-          res.render('findmatch', {
-            title: 'find it',
+          res.render("findmatch", {
+            title: "find it",
             users,
           });
         })
@@ -145,19 +145,21 @@ function likeUser(req, res) {
   User.findById(lUser)
     .then((likingUser) => {
       likingUser.likes.push(likingID);
-      likingUser
+      likingUser;
+      setTimeout(3000);
         .save()
         .then((newLikingUser) => {
           const userId = req.params.userId;
           User.findById(userId)
             .then((likedUser) => {
               likedUser.likedBy.push(lUser);
+              setTimeout(3000);
               likedUser
                 .save()
                 .then((newLikedUser) => {
-                  console.log('Liked User Updated!');
+                  console.log("Liked User Updated!");
                   if (newLikedUser.likes.includes(lUser)) {
-                    console.log('Match found!');
+                    console.log("Match found!");
                     User.findByIdAndUpdate(
                       {
                         _id: userId,
@@ -173,27 +175,30 @@ function likeUser(req, res) {
                     )
                       .then((updatedLikedUser) => {
                         newLikingUser.matches.push(userId);
+                        setTimeout(3000);
                         newLikingUser.matches.push(lUser);
+                        setTimeout(3000);
                         newLikingUser
                           .save()
                           .then((savedNewLikingUser) => {
                             updatedLikedUser
                               .save()
                               .then((newUpdatedLikedUser) => {
-                                console.log('Update Made!');
+                                console.log("Update Made!");
                               });
                           })
                           .catch((err) => console.log(err));
                       })
                       .catch((err) => console.log(err));
                   } else {
-                    console.log('pending...');
+                    console.log("pending...");
                     newLikingUser.pending.push(userId);
+                    setTimeout(3000);
                     newLikingUser
                       .save()
                       .then(() => {
-                        console.log('pending update made');
-                        res.redirect('/findmatch');
+                        console.log("pending update made");
+                        res.redirect("/findmatch");
                       })
                       .catch((err) => console.log(err));
                   }
@@ -201,7 +206,8 @@ function likeUser(req, res) {
                 .catch((err) => console.log(err));
             })
             .catch((err) => console.log(err));
-          console.log('Liking User Updated!');
+            setTimeout(3000);
+          console.log("Liking User Updated!");
         })
         .catch((err) => console.log(err));
     })
@@ -234,8 +240,8 @@ function resetUser(req, res) {
         }
       )
         .then(() => {
-          console.log('successfully reset');
-          res.redirect('/findmatch');
+          console.log("successfully reset");
+          res.redirect("/likelist");
         })
         .catch((err) => console.log(err));
     })
@@ -265,7 +271,7 @@ function dislikeUser(req, res) {
               dislikedUser
                 .save()
                 .then((newDislikedUser) => {
-                  res.redirect('/findmatch');
+                  res.redirect("/findmatch");
                 })
                 .catch((err) => console.log(err.message));
             })
@@ -283,7 +289,7 @@ function likeList(req, res) {
     .then((user) => {
       const userMatches = [...user.matches];
       const usersPending = [...user.pending];
-      console.log('userMatches', userMatches);
+      console.log("userMatches", userMatches);
       User.find({
         _id: userMatches,
       })
@@ -292,8 +298,8 @@ function likeList(req, res) {
             _id: usersPending,
           })
             .then((pendingUsers) => {
-              res.render('likelist', {
-                title: 'My Like list',
+              res.render("likelist", {
+                title: "My Like list",
                 matchedUsers,
                 pendingUsers,
               });
@@ -310,8 +316,8 @@ function profile(req, res) {
   const userID = req.session.user;
   User.findById(userID)
     .then((user) => {
-      res.render('myprofile', {
-        title: 'My profile',
+      res.render("myprofile", {
+        title: "My profile",
         user,
       });
     })

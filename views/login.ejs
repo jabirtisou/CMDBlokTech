@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <title>Login ~ Footballmatch</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
-    </link>
-    <title>Document</title>
-</head>
-
-<body>
+  <body>
     <%- include('layouts/header'); -%>
     <h1>Login</h1>
     <form action="/login" method="POST">
-        <label>Pick a user
-            <select name="user" id="user">
-                <% if (users.length> 0) { %>
-                    <% for (let user of users) { %>
-                        <option value="<%= user._id%>">
-                            <%= user.firstName%>
-                                <%= user.lastName%>
-                        </option>
-                        <% } %>
-                            <% } else { %>
-                                <h1>No users Found!</h1>
-                                <% } %>
-            </select>
-        </label>
-        <button type="submit">Login</button>
+      <label
+        >Pick a user
+        <select name="user" id="user">
+          <% if (users.length> 0) { %> <% for (let user of users) { %>
+          <option value="<%= user._id%>">
+            <%= user.firstName%> <%= user.lastName%>
+          </option>
+          <% } %> <% } else { %>
+          <h1>No users Found!</h1>
+          <% } %>
+        </select>
+      </label>
+      <button type="submit">Login</button>
     </form>
-</body>
-
+  </body>
 </html>

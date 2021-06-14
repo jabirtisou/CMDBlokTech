@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find your match</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/findmatch.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
@@ -19,7 +19,11 @@
         <li>
           <figure class="userfigure">
             <a>
-              <img src="/images/<%=user.image%>" class="profilepic" />
+              <img
+                src="/images/<%=user.image%>"
+                class="profilepic"
+                height="180px"
+              />
             </a>
             <figcaption>
               <h2><%= user.firstName + ' ' + user.lastName %></h2>
@@ -47,6 +51,7 @@
           value="<%= user._id %>"
           name="likingID"
           type="submit"
+          id="voetbal"
         >
           <img class="buttonimg" src="images/soccerbtn.svg" />
         </button>

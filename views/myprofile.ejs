@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/myprofile.css">
-    </link>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/myprofile.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <title>Find your match</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include('layouts/header'); -%>
     <figure class="containerpic">
-        <img src="/images/<%=user.image%>" class="myprofilepic">
-        <figcaption>
-            <h4><%= user.firstName %> <%= user.lastName %></h4>
-            <p><%= user.age %> Jaar</p>
-        </figcaption>
+      <img src="/images/<%=user.image%>" class="myprofilepic" height="180px" />
+      <figcaption>
+        <h4><%= user.firstName %> <%= user.lastName %></h4>
+        <p><%= user.age %> Jaar</p>
+      </figcaption>
     </figure>
 
     <%- include('layouts/nav'); -%>
-</body>
-
+  </body>
 </html>

@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
+
 }
 
 body {
@@ -15,7 +15,7 @@ body {
 
 /* Header */
 
-header{
+header {
     position: fixed;
     top: 0;
     width: 100%;
@@ -23,7 +23,7 @@ header{
     background-color: #041B32;
 }
 
-.apptitle{
+.apptitle {
     text-align: center;
     font-size: 2.1em;
     color: white;
@@ -41,10 +41,10 @@ header{
     box-shadow: 0 0 3px rgb(0 0 0 / 20%);
     background-color: #041B32;
     display: flex;
-    
+
 }
 
-.nav_active3{
+.nav_active3 {
     background-color: #34528D;
 }
 
@@ -67,23 +67,34 @@ header{
     text-decoration: none;
 }
 
-.roundpic{
-   border-radius: 50%;
-   height: 45px;
-   width: 45px;
-   position: absolute;
+
+/* Pending & Match Lijst */
+
+
+.roundpic {
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    z-index: -1;
 
 }
 
-figure{
+figure {
     margin: 1.3em;
 }
-h2{
+
+h2 {
     font-size: 23px;
     margin: 10px 40px 10px 25px;
 }
 
-figcaption{
+h5 {
+    margin: 10px 40px 10px 5px;
+    color: gray;
+}
+
+figcaption {
     margin-left: 3.3em;
 }
 
@@ -103,7 +114,8 @@ button {
     border: none;
     background: transparent;
 }
-.buttonimg{
+
+.buttonimg {
     width: 30px;
     height: 30px;
 }
