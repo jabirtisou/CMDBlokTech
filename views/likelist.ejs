@@ -23,11 +23,7 @@
             <% if (matchedUsers.length> 0) { %> <% for (let matchedUser of
             matchedUsers) { %>
             <figure>
-              <img
-                src="/images/<%=matchedUser.image%>"
-                class="roundpic"
-                height="180px"
-              />
+              <img src="/images/<%=matchedUser.image%>" class="roundpic" />
               <figcaption>
                 <h4>
                   <%= matchedUser.firstName %> <%= matchedUser.lastName %>
@@ -52,11 +48,7 @@
             <% if (pendingUsers.length> 0) { %> <% for (let pendingUser of
             pendingUsers) { %>
             <figure>
-              <img
-                src="/images/<%=pendingUser.image%>"
-                class="roundpic"
-                height="180px"
-              />
+              <img src="/images/<%=pendingUser.image%>" class="roundpic" />
               <figcaption>
                 <h4>
                   <%= pendingUser.firstName %> <%= pendingUser.lastName %>

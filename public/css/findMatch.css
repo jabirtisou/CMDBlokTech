@@ -116,6 +116,7 @@ p {
 .profilepic {
     border-radius: 10px;
     max-width: 15em;
+    width: 15em;
     height: auto;
 }
 
@@ -145,4 +146,8 @@ button {
     height: 80px;
     display: flex;
 
+}
+
+.hidden {
+    display: none;
 }
