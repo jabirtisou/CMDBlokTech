@@ -97,14 +97,13 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## 📢 Contact
 
-Your Name - Jabir Tisoudali - jabirtisou@hotmail.com
+Your Name - Jabir Tisoudali 
 
 Project Link: [https://github.com/jabirtisou/CMDBlokTech](https://github.com/jabirtisou/CMDBlokTech)
 
 
 
-<!-- ACKNOWLEDGEMENTS -->
-## 📚 Acknowledgements
+
 
 
 
